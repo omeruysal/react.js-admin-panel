@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const Register = () => {
   const navigate = useNavigate();
   const [form, setForm] = useState({ firstName: '', lastName: '', email: '', password: '', passwordConfirm: '' });
-  const [state, setState] = useState(false);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm((pr) => ({ ...pr, [e.target.name]: e.target.value }));
   };
@@ -15,7 +15,7 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:8080/api/register', form);
+      const response = await axios.post('register', form);
       navigate('/login');
     } catch (error) {
       console.log(error);
