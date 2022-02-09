@@ -26,9 +26,16 @@ const Register = () => {
       <form onSubmit={handleSubmit}>
         <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
 
-        <input name="firstName" className="form-control" placeholder="First Name" onChange={handleChange} />
-        <input name="lastName" className="form-control" placeholder="Last Name" onChange={handleChange} />
-        <input name="email" type="email" className="form-control" placeholder="Email" onChange={handleChange} />
+        <input name="firstName" className="form-control" placeholder="First Name" required onChange={handleChange} />
+        <input name="lastName" className="form-control" placeholder="Last Name" required onChange={handleChange} />
+        <input
+          name="email"
+          type="email"
+          className="form-control"
+          placeholder="Email"
+          required
+          onChange={handleChange}
+        />
         <input
           name="password"
           type="password"
